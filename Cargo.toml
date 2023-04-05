@@ -1,0 +1,9 @@
+[package]
+name = "sentiment_analysis"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.2.1", features = ["derive"] }
+csv = "1.2.1"
+tch = "0.11.0"
