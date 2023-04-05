@@ -26,14 +26,24 @@ fn main() {
     println!("Prediction: {prediction}");
 }
 
+/// # Panics
+///
+/// This function panics if it is unable to read the files for training
 fn get_module(arg_new_module: bool) -> SentimentModel {
     let mut model = SentimentModel::new();
 
     if arg_new_module {
         println!("Creating a new model");
 
-        let training_data = SentimentData::new("data/twitter_training.csv".to_string());
-        let validate_data = SentimentData::new("data/twitter_validate.csv".to_string());
+        let training_data = match SentimentData::from_csv("data/twitter_training.csv", 32) {
+            Ok(data) => data,
+            Err(err) => panic!("{}", err),
+        };
+
+        let validate_data = match SentimentData::from_csv("data/twitter_validate.csv", 32) {
+            Ok(data) => data,
+            Err(err) => panic!("{}", err),
+        };
 
         model.train(&training_data);
         model.eval(&validate_data);
