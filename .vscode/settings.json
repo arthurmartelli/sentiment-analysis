@@ -1,4 +1,12 @@
 {
   "python.analysis.typeCheckingMode": "basic",
-  "cSpell.words": ["bert", "cuda", "Logits", "ndarray", "pretrained", "Vaswani"]
+  "cSpell.words": [
+    "bert",
+    "cuda",
+    "Logits",
+    "ndarray",
+    "pretrained",
+    "println",
+    "Vaswani"
+  ]
 }
