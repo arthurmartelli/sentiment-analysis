@@ -3,12 +3,16 @@ extern crate clap;
 use clap::Parser;
 
 mod args;
-mod models;
 
-pub use models::SentimentModel;
+use sentiment_analysis::SentimentModel;
 
 fn main() {
-    let input = args::EvalOptions::parse().text;
+    let args = args::EvalOptions::parse();
+    command_handler(args);
+}
+
+fn command_handler(args: args::EvalOptions) {
+    let input = args.text;
     let mut model = SentimentModel::new();
     let prediction = model.predict(&input);
 

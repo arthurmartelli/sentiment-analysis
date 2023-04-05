@@ -45,3 +45,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT](./LICENSE)
+
+## Known Issues
+
+There is a weird bug for the program, when importing the rust-bert model into the `main.rs` file, it will no longer print to `stdout` when the program is invoked directly. It has to be used with the command `cargo run -- <TEXT>` for it to print the results.

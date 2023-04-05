@@ -1441,11 +1441,7 @@ name = "sentiment_analysis"
 version = "0.1.0"
 dependencies = [
  "clap",
- "csv",
- "ndarray",
- "rand",
  "rust-bert",
- "tch",
 ]
 
 [[package]]
